@@ -1,0 +1,1 @@
+Implementation for the Evgeniy Borisov ['Spring the ripper'](https://www.youtube.com/watch?v=BmBr5diz8WA&t=5s) video.
