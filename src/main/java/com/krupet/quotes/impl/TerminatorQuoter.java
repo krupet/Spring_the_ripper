@@ -2,6 +2,7 @@ package com.krupet.quotes.impl;
 
 import com.krupet.quotes.Quoter;
 import com.krupet.quotes.annotations.InjectRandomInt;
+import com.krupet.quotes.annotations.PostProxy;
 import com.krupet.quotes.annotations.Profiling;
 import lombok.Setter;
 
@@ -21,7 +22,10 @@ public class TerminatorQuoter implements Quoter {
         System.out.println(repeat);
     }
 
+    @Override
+    @PostProxy
     public void sayQuote() {
+        System.out.println("Phase 3.");
         for (int i = 0; i < repeat; i++) {
             System.out.println("message = " + message);
         }
