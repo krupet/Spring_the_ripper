@@ -4,6 +4,8 @@ import com.krupet.quotes.Quoter;
 import com.krupet.quotes.annotations.InjectRandomInt;
 import lombok.Setter;
 
+import javax.annotation.PostConstruct;
+
 public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 2, max = 7)
@@ -12,9 +14,20 @@ public class TerminatorQuoter implements Quoter {
     @Setter
     private String message;
 
+    public TerminatorQuoter() {
+        System.out.println("Phase 1.");
+        System.out.println(repeat);
+    }
+
     public void sayQuote() {
         for (int i = 0; i < repeat; i++) {
             System.out.println("message = " + message);
         }
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Phase 2.");
+        System.out.println(repeat);
     }
 }
