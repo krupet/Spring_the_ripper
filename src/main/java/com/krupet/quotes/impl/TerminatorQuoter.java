@@ -1,6 +1,7 @@
 package com.krupet.quotes.impl;
 
 import com.krupet.quotes.Quoter;
+import com.krupet.quotes.annotations.DeprecatedClass;
 import com.krupet.quotes.annotations.InjectRandomInt;
 import com.krupet.quotes.annotations.PostProxy;
 import com.krupet.quotes.annotations.Profiling;
@@ -9,6 +10,7 @@ import lombok.Setter;
 import javax.annotation.PostConstruct;
 
 @Profiling
+@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 2, max = 7)
